@@ -21,7 +21,7 @@ float calcularMedia(float nota1, float nota2) {
 
 int main() {
     FILE *arquivo;
-    arquivo = fopen("C:/Users/davi.figueiredo/Documents/dados/DadosEntrada.csv", "r");
+    arquivo = fopen("C:/Users/forad/Documents/projeto_est_dados/DadosEntrada.csv", "r");
 
     if (arquivo == NULL) {
         printf("Impossivel abrir o arquivo.\n");
@@ -45,6 +45,13 @@ int main() {
         printf("\nNota 1: %.2f", Pessoa.nota1);
         printf("\nNota 2: %.2f", Pessoa.nota2);
         printf("\nNota Final: %.2f\n", total);
+        
+        // Verifica se o aluno passou ou não
+		if (total >= 7.0) {
+			printf("APROVADO");
+		} else {
+			printf("REPROVADO");
+		}	 
     }
 
     fclose(arquivo);
