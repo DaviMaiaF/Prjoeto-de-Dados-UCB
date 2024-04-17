@@ -41,30 +41,30 @@ void processarArquivo(FILE *arquivoEntrada, FILE *arquivoSaida) {
             strcpy(situacao, "REPROVADO");
         }	 
         
-        // Formata a string com as informações desejadas
-        char infoFormatada[100];
-        sprintf(infoFormatada, "%s,%.2f,%s\n", Pessoa.nome, total, situacao);
-        
         // Escreve a string formatada no novo arquivo
-        fprintf(arquivoSaida, "%s", infoFormatada);
+        fprintf(arquivoSaida, "%s,%.2f,%s\n", Pessoa.nome, total, situacao);
     }
 }
 
 int main() {
     FILE *arquivoEntrada;
-    arquivoEntrada = fopen("C:/Users/davi.figueiredo/Documents/est_dados/DadosEntrada.csv", "r");
+    arquivoEntrada = fopen("DadosEntrada.csv", "r");
 
 	if (arquivoEntrada == NULL) {
         printf("Impossivel abrir o arquivo de entrada.\n");
         exit(1);
     }
+	
 	FILE *arquivoSaida;
-	arquivoSaida = fopen("C:/Users/davi.figueiredo/Documents/est_dados/DadosEntrada.csv", "w");
+    arquivoSaida = fopen("saidaDados.txt", "w");
 
     if (arquivoSaida == NULL) {
         printf("Impossivel abrir o arquivo.\n");
         exit(1);
     }
+    else {
+    	printf("Arquivo Gerado\n");
+	}
 
     processarArquivo(arquivoEntrada, arquivoSaida);
 
