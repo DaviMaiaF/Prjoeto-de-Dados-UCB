@@ -56,7 +56,7 @@ int main() {
     }
 	
 	FILE *arquivoSaida;
-    arquivoSaida = fopen("SituacaoFinal.cvs", "w");
+    arquivoSaida = fopen("SituacaoFinal.txt", "w");
 
     if (arquivoSaida == NULL) {
         printf("Impossivel abrir o arquivo.\n");
